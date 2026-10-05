@@ -1,0 +1,6 @@
+# Required packages; see README for the recorded experiment environment.
+torch
+torchvision
+numpy
+matplotlib
+ipykernel
