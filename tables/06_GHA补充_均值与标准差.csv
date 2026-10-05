@@ -1,0 +1,9 @@
+﻿method,metric,mean,sample_sd,n
+fixed,final_validation_accuracy_pct,82.74444444444444,1.2230805067230575,3
+fixed,test_accuracy_pct,83.39666666666668,1.370194633376344,3
+fixed,mean_abs_feature_cosine,0.06269386534889539,0.0006709887497674121,3
+fixed,late_validation_mean_absolute_step_pp,0.27222222222222464,0.1792312545082266,3
+linear_decay,final_validation_accuracy_pct,86.36111111111111,0.7916812864147165,3
+linear_decay,test_accuracy_pct,87.14333333333333,0.6524824390995786,3
+linear_decay,mean_abs_feature_cosine,0.06193078557650248,0.0007490183869858628,3
+linear_decay,late_validation_mean_absolute_step_pp,0.4013888888888882,0.04494080468711987,3
