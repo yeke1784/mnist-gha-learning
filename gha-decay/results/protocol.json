@@ -1,0 +1,66 @@
+{
+  "design": "paired comparison; fixed split seed 0; initialization/order seeds 0,1,2",
+  "source": "biai-mlp-0.1.0/mlp.ipynb",
+  "source_sha256": "155d17a674af259738ddc2e040c2d6ccc7b38ba7ed3547e668f49b9a58ac5347",
+  "data_sha256": {
+    "t10k-images-idx3-ubyte": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7",
+    "t10k-labels-idx1-ubyte": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2",
+    "train-images-idx3-ubyte": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db",
+    "train-labels-idx1-ubyte": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5"
+  },
+  "split_sha256": "4c226c41bdd65c9e11fe47eba8358cefb5c375b9699b1c912586a2125168af52",
+  "train_n": 54000,
+  "validation_n": 6000,
+  "test_n": 10000,
+  "batch_size": 64,
+  "epochs": 10,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "hidden_units": 128,
+  "bias": false,
+  "activation": "ReLU; GHA uses pre-ReLU linear activity",
+  "preprocessing": "float32 / 255; no centering; tensor cache equality checked against ToTensor",
+  "classifier_optimizer": "SGD, lr=0.05, momentum=0, weight_decay=0",
+  "feature_rates": {
+    "fixed": [
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001
+    ],
+    "linear_decay": [
+      0.001,
+      0.0009000000000000001,
+      0.0008,
+      0.0007,
+      0.0006,
+      0.0005,
+      0.0003999999999999999,
+      0.00030000000000000003,
+      0.00019999999999999996,
+      0.00010000000000000009
+    ]
+  },
+  "primary": "paired difference in final (epoch 10) validation accuracy, decay minus fixed",
+  "secondary": "final test accuracy; mean absolute off-diagonal weight cosine; late validation step change",
+  "late_change_definition": "mean absolute successive change of validation accuracy within epochs 6-10; not a causal stability test",
+  "selection": "one decay schedule fixed before running; no tuning; final epoch, no checkpoint selection",
+  "test_policy": "evaluate each final model once, after all six training runs have completed",
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.14.0+cu126",
+    "device": "cpu",
+    "threads": 4,
+    "deterministic": true
+  },
+  "time_started": "2026-10-06T01:27:46+0800"
+}
